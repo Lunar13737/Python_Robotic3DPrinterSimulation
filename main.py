@@ -20,18 +20,10 @@ plt.rcParams.update({
     "font.family": "Computer Modern Roman",
 })
 
-# Python on Desktop (Mac OS instructions)
-# Download the latest stable release of FFMPEG at the link below
-# https://www.ffmpeg.org/download.html
-# Unzip the file and save it in your working directory
-# In the terminal, type
-# export PATH=$PATH:.
-
 # Jupyter Notebook
 # Uncomment the line below
-from IPython.display import HTML
+#from IPython.display import HTML
 
-# For testing, use the Lambda below
 Lambda = np.array([0.2, -0.2, 10, -1.2])
 
 thetad = np.array([0.2,-0.2,10]) # angular velocity [rad/s], (theta dot)
@@ -254,16 +246,10 @@ dots2, = ax.plot([], [], [], 'r-', markersize=5)
 dots3, = ax.plot([], [], [], 'r.', markersize=10)
 dots4, = ax.plot([], [], [], 'g.', markersize=10)
 
-# Python on Desktop
-#anim = animation.FuncAnimation(fig, update, frames=len(r_arm), interval=50, blit=False)
-#writer = animation.writers['ffmpeg']()
-#anim.save("robotic_3D_printer.mp4", writer=writer, dpi=72)
+anim = animation.FuncAnimation(fig, update, frames=len(r_arm), interval=50, blit=False)
+writer = animation.writers['ffmpeg']()
+anim.save("robotic_3D_printer.mp4", writer=writer, dpi=72)
 
 t_f = timeit.default_timer()
 runTime = (t_f - t_0)/60
 print("run time = %.2f min" % runTime)
-
-# Jupyter Notebook
-anim = animation.FuncAnimation(fig, update, frames=len(r_arm), interval=50, blit=True)
-rc('animation', html='jshtml')
-anim
