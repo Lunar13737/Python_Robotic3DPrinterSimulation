@@ -7,4 +7,4 @@ The position and velocity of each droplet are tracked; gravitational, electrical
 
 *GA_1.py* and *GA_2.py* are for Genetic algorithm, and *main.py* is for the simulation.
 
-cr. Prof. Tarek I Zohdi @UC Berkeley
+cr. Prof. Tarek Zohdi @UC Berkeley
